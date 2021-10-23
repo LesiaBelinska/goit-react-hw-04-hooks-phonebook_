@@ -1,27 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import shortid from 'shortid';
 import s from './Filter.module.css';
 
-class Filter extends Component {
+export default function Filter({value, onChange}){
 
-    filterInputId = shortid.generate();
+    const filterInputId = () => shortid.generate();
 
-    render() {
+    
         return (
-            <label className={s.label} htmlFor={this.filterInputId}>
+            <label className={s.label} htmlFor={filterInputId}>
                 Find contacts by name
                 <input className={s.input}
                     type='text'
-                    value={this.props.value}
-                    onChange={this.props.onChange}
+                    value={value}
+                    onChange={onChange}
+                    id={filterInputId}
                 />
             </label>
         )
-    }
 }
 
-export default Filter;
+
 
 Filter.propTypes = {
   value: PropTypes.string,
