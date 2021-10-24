@@ -10,8 +10,8 @@ export default function ContactForm({ onSubmit }) {
     const [number, setNumber] = useState('');
  
 
-    const nameInputId = () => shortid.generate();
-    const numberInputId = () => shortid.generate();
+    const nameInputId = shortid.generate();
+    const numberInputId = shortid.generate();
 
     const handleChange = e => {
     const { name, value } = e.currentTarget;

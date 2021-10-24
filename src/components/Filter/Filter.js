@@ -5,7 +5,7 @@ import s from './Filter.module.css';
 
 export default function Filter({value, onChange}){
 
-    const filterInputId = () => shortid.generate();
+    const filterInputId = shortid.generate();
 
     
         return (
